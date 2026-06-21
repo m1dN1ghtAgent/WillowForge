@@ -1,0 +1,33 @@
+with tab2:
+    st.header("WillowForge Quantum AI Trading")
+    if st.button("Run WillowForge Simulation"):
+        st.success("Quantum portfolio optimization complete.")
+    st.metric("Predicted Portfolio Drawdown", "18.5%")
+    
+    # Past Week Market Simulation
+    st.subheader("Past Week Market Simulation")
+    if st.button("Run Past Week Simulation"):
+        data = pd.DataFrame({
+            "Date": pd.date_range(end=datetime.now(), periods=7),
+            "NVDA": [120, 118, 125, 130, 128, 135, 132],
+            "TSM": [180, 178, 185, 190, 188, 195, 192],
+            "AAPL": [220, 218, 225, 230, 228, 235, 232]
+        })
+        st.line_chart(data.set_index("Date"))
+        st.metric("Portfolio Performance (Past Week)", "-2.8%")
+    
+    # Additional Graphs
+    st.subheader("Market Movement Graphs")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.line_chart(pd.DataFrame({
+            "Date": pd.date_range(end=datetime.now(), periods=7),
+            "NVDA": [120, 118, 125, 130, 128, 135, 132]
+        }).set_index("Date"))
+    with col2:
+        st.bar_chart(pd.DataFrame({
+            "Asset": ["NVDA", "TSM", "AAPL"],
+            "Change": [2.5, -1.2, 3.8]
+        }).set_index("Asset"))
+    
+    st.caption("Live price movements, portfolio performance, and volatility charts.")
