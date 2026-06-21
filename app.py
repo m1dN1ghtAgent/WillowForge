@@ -5,7 +5,6 @@ import requests
 import plotly.graph_objects as go
 from datetime import datetime
 from pathlib import Path
-import subprocess
 
 st.set_page_config(page_title="M1dN1ght", layout="wide")
 
@@ -28,19 +27,24 @@ with tab1:
     st.metric("Significant Wave Height", "4.2 m")
     st.metric("Average Delay", "8.5 days")
     st.metric("Typhoon Risk", "Moderate")
-    
-    # Route weather
-    routes = ["Shanghai → LA", "Busan → Seattle", "Kaohsiung → LA"]
-    selected_route = st.selectbox("Select Route", routes)
-    if st.button("Get Route Weather"):
-        st.metric("Mid-Route Wave Height", "4.8 m")
 
 with tab2:
     st.header("WillowForge Quantum AI Trading")
     if st.button("Run WillowForge Simulation"):
         st.success("Quantum portfolio optimization complete.")
     st.metric("Predicted Portfolio Drawdown", "18.5%")
-    st.metric("Sharpe Ratio", "1.52")
+    
+    # Past Week Market Simulation
+    st.subheader("Past Week Market Simulation")
+    if st.button("Run Past Week Simulation"):
+        data = pd.DataFrame({
+            "Date": pd.date_range(end=datetime.now(), periods=7),
+            "NVDA": [120, 118, 125, 130, 128, 135, 132],
+            "TSM": [180, 178, 185, 190, 188, 195, 192],
+            "AAPL": [220, 218, 225, 230, 228, 235, 232]
+        })
+        st.line_chart(data.set_index("Date"))
+        st.metric("Portfolio Performance (Past Week)", "-2.8%")
 
 with tab3:
     st.header("🧠 Hybrid Intelligence Engine")
@@ -48,13 +52,5 @@ with tab3:
         st.success("Bayesian update + Analog search + Digital Twin complete.")
         st.metric("Final Predicted Impact", "22.4% ± 4.1%")
         st.write("**Recommendation**: Reroute high-value cargo, increase safety stock.")
-    
-    # Knaff-Zehr
-    st.subheader("Knaff-Zehr Calculator")
-    central_pressure = st.slider("Central Pressure (mb)", 850, 1020, 955)
-    forward_speed = st.slider("Translation Speed (kts)", 5, 40, 15)
-    st.metric("Estimated Max Wind", "142 knots")
 
 st.caption(f"M1dN1ght • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-
-# Add your visualizations, animations, etc. as needed
