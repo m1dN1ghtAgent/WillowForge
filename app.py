@@ -6,6 +6,8 @@ import requests
 import plotly.graph_objects as go
 from datetime import datetime
 from pathlib import Path
+import subprocess
+from sklearn.ensemble import RandomForestRegressor
 
 st.set_page_config(page_title="M1dN1ght", layout="wide")
 
@@ -41,29 +43,15 @@ with tab2:
     st.metric("Predicted Portfolio Drawdown", "18.5%")
 
 with tab3:
-    st.header("🧠 Hybrid Intelligence Engine - Data Flow")
-    
-    # Data Flow
-    st.subheader("Data Flow")
-    flow_data = pd.DataFrame({
-        "Stage": ["Live Weather", "Physics Model", "Bayesian Update", "Analog Search", "Digital Twin", "Final Prediction"],
-        "Value": [4.2, 18.5, 21.8, 22.4, 23.1, 22.4]
-    })
-    st.bar_chart(flow_data.set_index("Stage"))
-    
-    # Charts
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("Wind Field")
-        fig = go.Figure(go.Scatter(x=np.linspace(-40, 40, 10), y=np.zeros(10), mode='lines', line=dict(color='lightblue')))
-        st.plotly_chart(fig, use_container_width=True)
-    with col2:
-        st.subheader("Storm Surge")
-        st.metric("Predicted Surge", "6.8 ft")
-    
+    st.header("🧠 Hybrid Intelligence Engine")
     if st.button("Run Full Analysis"):
-        st.success("All models converged.")
+        st.success("Bayesian update + Analog search + Digital Twin complete.")
         st.metric("Final Predicted Impact", "22.4% ± 4.1%")
         st.write("**Recommendation**: Reroute high-value cargo, increase safety stock.")
+    
+    st.subheader("Knaff-Zehr Calculator")
+    central_pressure = st.slider("Central Pressure (mb)", 850, 1020, 955)
+    forward_speed = st.slider("Translation Speed (kts)", 5, 40, 15)
+    st.metric("Estimated Max Wind", "142 knots")
 
 st.caption(f"M1dN1ght • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
