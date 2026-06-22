@@ -6,8 +6,6 @@ import requests
 import plotly.graph_objects as go
 from datetime import datetime
 from pathlib import Path
-import subprocess
-from sklearn.ensemble import RandomForestRegressor
 
 st.set_page_config(page_title="M1dN1ght", layout="wide")
 
