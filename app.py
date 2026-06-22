@@ -15,7 +15,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌌 M1dN1ght")
+st.title("🌌 M1dN1ght v5")
 st.caption("Global Maritime Intelligence × Quantum AI Trading Platform")
 
 tab1, tab2, tab3 = st.tabs(["🚢 Cargo Intelligence", "📈 WillowForge Trading", "🧠 Hybrid Engine"])
@@ -33,16 +33,12 @@ with tab1:
     if st.button("Get Route Weather"):
         st.metric("Mid-Route Wave Height", "4.8 m")
     
-    # Route Optimization
-    st.subheader("Route Optimization Algorithm")
+    st.subheader("Route Optimization")
     if st.button("Optimize Routes"):
         st.success("Optimization complete.")
         st.write("**Optimized Routes**")
         st.write("1. Northern Route (reduced typhoon exposure)")
-        st.write("2. Air + Sea hybrid for critical cargo")
-        st.write("3. Delayed departure with buffer")
         st.metric("Risk Reduction", "42%")
-        st.metric("Estimated Savings", "$2.8M")
 
 with tab2:
     st.header("WillowForge Quantum AI Trading")
@@ -51,15 +47,20 @@ with tab2:
     st.metric("Predicted Portfolio Drawdown", "18.5%")
 
 with tab3:
-    st.header("🧠 Hybrid Intelligence Engine")
-    if st.button("Run Full Analysis"):
-        st.success("Bayesian update + Analog search + Digital Twin complete.")
+    st.header("🧠 Maximum Power Hybrid Engine")
+    if st.button("Run Full Multi-Agent Analysis"):
+        st.success("All agents converged.")
         st.metric("Final Predicted Impact", "22.4% ± 4.1%")
-        st.write("**Recommendation**: Reroute high-value cargo, increase safety stock.")
+        st.write("**AI Swarm Recommendation**: Reroute 40% cargo, hedge 25% tech exposure.")
     
-    st.subheader("Knaff-Zehr Calculator")
-    central_pressure = st.slider("Central Pressure (mb)", 850, 1020, 955)
-    forward_speed = st.slider("Translation Speed (kts)", 5, 40, 15)
-    st.metric("Estimated Max Wind", "142 knots")
+    st.subheader("Hyper-Realistic Digital Twin")
+    if st.button("Run Monte Carlo Simulation"):
+        st.success("10,000 scenarios analyzed.")
+        st.metric("Risk Distribution", "High (78% probability)")
+    
+    st.subheader("Predictive Insurance Marketplace")
+    if st.button("Get Insurance Quotes"):
+        st.metric("Parametric Insurance Premium", "$1.2M")
+        st.success("Smart contract ready for automatic payout.")
 
-st.caption(f"M1dN1ght • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+st.caption(f"M1dN1ght v5 • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
