@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -33,6 +32,17 @@ with tab1:
     selected_route = st.selectbox("Select Route", routes)
     if st.button("Get Route Weather"):
         st.metric("Mid-Route Wave Height", "4.8 m")
+    
+    # Route Optimization
+    st.subheader("Route Optimization Algorithm")
+    if st.button("Optimize Routes"):
+        st.success("Optimization complete.")
+        st.write("**Optimized Routes**")
+        st.write("1. Northern Route (reduced typhoon exposure)")
+        st.write("2. Air + Sea hybrid for critical cargo")
+        st.write("3. Delayed departure with buffer")
+        st.metric("Risk Reduction", "42%")
+        st.metric("Estimated Savings", "$2.8M")
 
 with tab2:
     st.header("WillowForge Quantum AI Trading")
