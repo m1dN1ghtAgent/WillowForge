@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,7 +16,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌌 M1dN1ght v5")
+st.title("🌌 M1dN1ght")
 st.caption("Global Maritime Intelligence × Quantum AI Trading Platform")
 
 tab1, tab2, tab3 = st.tabs(["🚢 Cargo Intelligence", "📈 WillowForge Trading", "🧠 Hybrid Engine"])
@@ -47,20 +48,15 @@ with tab2:
     st.metric("Predicted Portfolio Drawdown", "18.5%")
 
 with tab3:
-    st.header("🧠 Maximum Power Hybrid Engine")
-    if st.button("Run Full Multi-Agent Analysis"):
-        st.success("All agents converged.")
+    st.header("🧠 Hybrid Intelligence Engine")
+    if st.button("Run Full Analysis"):
+        st.success("Bayesian update + Analog search + Digital Twin complete.")
         st.metric("Final Predicted Impact", "22.4% ± 4.1%")
-        st.write("**AI Swarm Recommendation**: Reroute 40% cargo, hedge 25% tech exposure.")
+        st.write("**Recommendation**: Reroute high-value cargo, increase safety stock.")
     
-    st.subheader("Hyper-Realistic Digital Twin")
-    if st.button("Run Monte Carlo Simulation"):
-        st.success("10,000 scenarios analyzed.")
-        st.metric("Risk Distribution", "High (78% probability)")
-    
-    st.subheader("Predictive Insurance Marketplace")
-    if st.button("Get Insurance Quotes"):
-        st.metric("Parametric Insurance Premium", "$1.2M")
-        st.success("Smart contract ready for automatic payout.")
+    st.subheader("Knaff-Zehr Calculator")
+    central_pressure = st.slider("Central Pressure (mb)", 850, 1020, 955)
+    forward_speed = st.slider("Translation Speed (kts)", 5, 40, 15)
+    st.metric("Estimated Max Wind", "142 knots")
 
-st.caption(f"M1dN1ght v5 • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+st.caption(f"M1dN1ght • {datetime.now().strftime('%Y-%m-%d %H:%M')}")
