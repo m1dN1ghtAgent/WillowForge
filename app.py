@@ -40,6 +40,7 @@ with tab1:
         st.write("**Optimized Routes**")
         st.write("1. Northern Route (reduced typhoon exposure)")
         st.metric("Risk Reduction", "42%")
+        st.metric("Estimated Savings", "$2.8M")
 
 with tab2:
     st.header("WillowForge Quantum AI Trading")
